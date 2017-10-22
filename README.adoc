@@ -1,0 +1,5 @@
+= Eventuate utilities
+
+Handy classes for developing and testing microservices.
+
+* link:./eventuate-util-test[Test utilities]
