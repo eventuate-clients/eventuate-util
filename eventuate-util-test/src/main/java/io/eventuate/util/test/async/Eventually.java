@@ -1,6 +1,7 @@
 package io.eventuate.util.test.async;
 
 
+import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Supplier;
 
@@ -10,8 +11,15 @@ import java.util.function.Supplier;
  */
 public class Eventually {
 
-  private static final int defaultIntervalInMillis = 500;
-  static int defaultIterations = 20;
+  private static final int defaultIntervalInMillis = Optional
+          .ofNullable(System.getenv("EVENTUATE_TEST_UTIL_DEFAULT_INTERVAL_IN_MILLIS"))
+          .map(Integer::parseInt)
+          .orElse(500);
+
+  static int defaultIterations = Optional
+          .ofNullable(System.getenv("EVENTUATE_TEST_UTIL_DEFAULT_ITERATIONS"))
+          .map(Integer::parseInt)
+          .orElse(20);
 
   public static void eventually(Runnable body) {
     eventually(defaultIterations, defaultIntervalInMillis, TimeUnit.MILLISECONDS, body);
