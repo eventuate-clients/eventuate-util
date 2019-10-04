@@ -1,0 +1,40 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+}
+
+plugins {
+    id "de.undercouch.download" version "4.0.0"
+}
+
+task swaggerUiDownload {
+    doLast {
+        download {
+            src "https://github.com/swagger-api/swagger-ui/archive/v${swaggerUiVersion}.zip"
+            dest "${buildDir}/swagger-ui.zip"
+            onlyIfNewer true
+        }
+    }
+}
+
+task unzipSwaggerUi(type: Copy) {
+    dependsOn swaggerUiDownload
+    from zipTree(file("${buildDir}/swagger-ui.zip"))
+    include "*/dist/**"
+    into file("${buildDir}")
+}
+
+jar {
+    dependsOn unzipSwaggerUi
+
+    from("${buildDir}/swagger-ui-${swaggerUiVersion}/dist") {
+        into "META-INF/swagger-ui"
+        exclude "index.html"
+    }
+
+    from("${buildDir}/swagger-ui-${swaggerUiVersion}/dist/index.html") {
+        into "META-INF/swagger-ui"
+        filter {it.replaceAll("\"https://petstore.swagger.io/v2/swagger.json\"", "window.location.origin + \"/swagger/swagger.yml\"") }
+    }
+}
