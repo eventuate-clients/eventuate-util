@@ -9,7 +9,7 @@ jobs:
           keys:
             - eventuate-util-{{ checksum "gradle.properties" }}
             - eventuate-util-
-      - run: TERM=dumb ./gradlew testClasses
+      - run: TERM=dumb ./gradlew testClasses aggregateJavaDocs
       - save_cache:
           paths:
             - ~/.gradle
