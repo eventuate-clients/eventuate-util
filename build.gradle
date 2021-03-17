@@ -75,19 +75,13 @@ subprojects {
 }
 
 
-task wrapper(type: Wrapper) {
-    gradleVersion = '3.5'
-}
 
 
 gradle.projectsEvaluated {
     task aggregateJavaDocs(type: Javadoc) {
         description = 'Aggregated Javadoc API documentation of all subprojects.'
         group = JavaBasePlugin.DOCUMENTATION_GROUP
-        dependsOn subprojects.findAll { subproject -> subproject.plugins.hasPlugin(PublicModulePlugin) }.javadoc
 
-        source subprojects.findAll { subproject -> subproject.plugins.hasPlugin(PublicModulePlugin) }.javadoc.source
         destinationDir file("$buildDir/docs/javadoc")
-        classpath = files(subprojects.findAll { subproject -> subproject.plugins.hasPlugin(PublicModulePlugin) }.javadoc.classpath)
     }
 }
