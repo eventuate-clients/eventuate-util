@@ -24,3 +24,9 @@ jobs:
           command: |
             TERM=dumb ./deploy-artifacts.sh
           when: on_success
+workflows:
+  build-test-and-deploy:
+    jobs:
+      - build:
+          context:
+            - publish
