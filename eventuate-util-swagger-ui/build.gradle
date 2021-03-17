@@ -23,13 +23,13 @@ task unzipSwaggerUi(type: Copy) {
     dependsOn swaggerUiDownload
     from zipTree(file("${buildDir}/swagger-ui.zip"))
     include "*/dist/**"
-    into file("${buildDir}")
+    into file("${buildDir}/swagger-ui-unzipped")
 }
 
 jar {
     dependsOn unzipSwaggerUi
 
-    from("${buildDir}/swagger-ui-${swaggerUiVersion}/dist") {
+    from("${buildDir}/swagger-ui-unzipped/swagger-ui-${swaggerUiVersion}/dist") {
         into "META-INF/swagger-ui"
         exclude "index.html"
     }
