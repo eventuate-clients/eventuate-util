@@ -49,3 +49,7 @@ gradle.projectsEvaluated {
         destinationDir file("$buildDir/docs/javadoc")
     }
 }
+
+configurations.all {
+    resolutionStrategy.cacheDynamicVersionsFor 10, 'minutes'
+}
