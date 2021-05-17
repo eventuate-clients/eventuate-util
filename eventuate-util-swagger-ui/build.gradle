@@ -34,7 +34,7 @@ jar {
         exclude "index.html"
     }
 
-    from("${buildDir}/swagger-ui-${swaggerUiVersion}/dist/index.html") {
+    from("${buildDir}/swagger-ui-unzipped/swagger-ui-${swaggerUiVersion}/dist/index.html") {
         into "META-INF/swagger-ui"
         filter {it.replaceAll("\"https://petstore.swagger.io/v2/swagger.json\"", "window.location.origin + \"/swagger/swagger.yml\"") }
     }
