@@ -1,3 +1,4 @@
 include "eventuate-util-test"
 include "eventuate-util-swagger-ui"
+include "eventuate-util-swagger-ui-tests"
 include "eventuate-util-spring-swagger"
