@@ -25,7 +25,7 @@ public class SwaggerUiAvailabilityTest {
 
   @Test
   public void testSwaggerUiAvailability() throws IOException {
-    UrlTesting.assertUrlStatusIsOk("http://localhost", port, "swagger-ui/index.html");
+    UrlTesting.assertUrlStatusIsOk("localhost", port, "/swagger-ui/index.html");
   }
 
 }
