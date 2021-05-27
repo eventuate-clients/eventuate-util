@@ -13,7 +13,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableSwagger2
 @ConditionalOnBean(EventuateSwaggerConfig.class)
-public class CommonSwaggerConfiguration {
+public class CommonSwaggerAutoConfiguration {
 
   @Bean
   public Docket api(EventuateSwaggerConfig eventuateSwaggerConfig,
