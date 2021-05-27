@@ -1,6 +1,7 @@
 package io.eventuate.util.spring.swagger;
 
 import com.fasterxml.classmate.TypeResolver;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.ResponseEntity;
@@ -11,6 +12,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @Configuration
 @EnableSwagger2
+@ConditionalOnBean(EventuateSwaggerConfig.class)
 public class CommonSwaggerConfiguration {
 
   @Bean
