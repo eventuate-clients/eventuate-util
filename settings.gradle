@@ -1,3 +1,5 @@
+rootProject.name=eventuate-util
+
 include "eventuate-util-test"
 include "eventuate-util-swagger-ui"
 include "eventuate-util-swagger-ui-tests"
