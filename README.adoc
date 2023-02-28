@@ -2,4 +2,10 @@
 
 Handy classes for developing and testing microservices.
 
+= An Eventuate project
+
+<img class="img-responsive" src="https://eventuate.io/i/logo.gif">
+
+This project is part of http://eventuate.io[Eventuate], which is a microservices collaboration platform.
+
 * link:./eventuate-util-test[Test utilities]
