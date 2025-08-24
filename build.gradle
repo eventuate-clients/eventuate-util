@@ -19,8 +19,8 @@ apply plugin: "io.eventuate.plugins.gradle.publish.EventuatePublish"
 
 
 subprojects {
-    sourceCompatibility = 1.8
-    targetCompatibility = 1.8
+    sourceCompatibility = 17
+    targetCompatibility = 17
 
     repositories {
         mavenCentral()
@@ -30,8 +30,7 @@ subprojects {
 
     if (!project.name.endsWith("-bom")) {
         dependencies {
-            testImplementation "junit:junit:4.12"
-            testImplementation "org.mockito:mockito-all:1.10.19"
+            testImplementation "org.mockito:mockito-core:4.11.0"
         }
     }
 
@@ -51,4 +50,7 @@ gradle.projectsEvaluated {
 
 configurations.all {
     resolutionStrategy.cacheDynamicVersionsFor 10, 'minutes'
+}
+tasks.withType(Test).configureEach {
+    useJUnitPlatform()
 }

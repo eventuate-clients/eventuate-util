@@ -39,3 +39,6 @@ jar {
         filter {it.replaceAll("\"https://petstore.swagger.io/v2/swagger.json\"", "window.location.origin + \"/swagger/swagger.yml\"") }
     }
 }
+tasks.withType(Test).configureEach {
+    useJUnitPlatform()
+}

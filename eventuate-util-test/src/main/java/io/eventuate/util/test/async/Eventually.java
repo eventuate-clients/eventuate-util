@@ -79,7 +79,7 @@ public class Eventually {
       }
     }
     if (eventuallyConfig.message == null)
-      throw new EventuallyException(String.format("Failed after %s iterations every %s milliseconds", eventuallyConfig.iterations, eventuallyConfig.timeout), t);
+      throw new EventuallyException("Failed after %s iterations every %s milliseconds".formatted(eventuallyConfig.iterations, eventuallyConfig.timeout), t);
     else
       throw new EventuallyException(String.format(eventuallyConfig.message + " - " + "Failed after %s iterations every %s milliseconds", eventuallyConfig.iterations, eventuallyConfig.timeout), t);
   }

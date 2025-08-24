@@ -2,17 +2,14 @@ package io.eventuate.util.swaggerui.tests;
 
 
 import io.eventuate.util.test.async.UrlTesting;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.web.server.LocalServerPort;
+import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.io.IOException;
 
-@RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = SwaggerUiAvailabilityTest.Config.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class SwaggerUiAvailabilityTest {
   @Configuration

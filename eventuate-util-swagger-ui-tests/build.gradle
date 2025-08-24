@@ -3,5 +3,7 @@ dependencies {
     testImplementation project(":eventuate-util-test")
     testImplementation "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
     testImplementation "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
-    testImplementation "junit:junit:4.12"
+}
+tasks.withType(Test).configureEach {
+    useJUnitPlatform()
 }
