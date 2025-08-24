@@ -30,8 +30,8 @@ subprojects {
 
     if (!project.name.endsWith("-bom")) {
         dependencies {
-            testCompile "junit:junit:4.12"
-            testCompile "org.mockito:mockito-all:1.10.19"
+            testImplementation "junit:junit:4.12"
+            testImplementation "org.mockito:mockito-all:1.10.19"
         }
     }
 

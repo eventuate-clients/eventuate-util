@@ -1,7 +1,7 @@
 dependencies {
-    testCompile project(":eventuate-util-swagger-ui")
-    testCompile project(":eventuate-util-test")
-    testCompile "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
-    testCompile "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
-    testCompile "junit:junit:4.12"
+    testImplementation project(":eventuate-util-swagger-ui")
+    testImplementation project(":eventuate-util-test")
+    testImplementation "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
+    testImplementation "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
+    testImplementation "junit:junit:4.12"
 }
