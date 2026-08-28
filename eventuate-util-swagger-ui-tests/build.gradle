@@ -1,8 +1,8 @@
 dependencies {
     testImplementation project(":eventuate-util-swagger-ui")
     testImplementation project(":eventuate-util-test")
-    testImplementation "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
-    testImplementation "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
+    testImplementation "org.springframework.boot:spring-boot-starter-webmvc:${springBootVersion}"
+    testImplementation "org.springframework.boot:spring-boot-starter-webmvc-test:${springBootVersion}"
 }
 tasks.withType(Test).configureEach {
     useJUnitPlatform()
